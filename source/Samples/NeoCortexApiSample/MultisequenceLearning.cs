@@ -236,7 +236,7 @@ namespace NeoCortexApiSample
 
                     // The first element (a single element) in the sequence cannot be predicted
                     double maxPossibleAccuraccy = (double)((double)sequenceKeyPair.data.Length - 1) / (double)sequenceKeyPair.data.Length * 100.0;
-
+                    
                     double accuracy = (double)matches / (double)sequenceKeyPair.data.Length * 100.0;
 
                     Debug.WriteLine($"Cycle: {cycle}\tMatches={matches} of {sequenceKeyPair.data.Length}\t {accuracy}%");

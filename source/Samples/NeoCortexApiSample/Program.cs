@@ -76,7 +76,7 @@ namespace NeoCortexApiSample
                     sw.WriteLine("------------------------------");
                     foreach (Sequence sequence in sequences)
                     {
-                        sw.WriteLine($"Sequence: {sequence.Name} -> {string.Join("-", sequence.Data)}");
+                        sw.WriteLine($"Sequence: {sequence.name} -> {string.Join("-", sequence.data)}");
                     }
                     sw.WriteLine("------------------------------");
                     foreach (Report report in reports)
@@ -122,15 +122,15 @@ namespace NeoCortexApiSample
             foreach (Sequence item in sequencesTest)
             {
                 Report report = new Report();
-                report.SequenceName = (string)item.Name;
-                Debug.WriteLine($"Using test sequence: {item.Name}");
+                report.SequenceName = (string)item.name;
+                Debug.WriteLine($"Using test sequence: {item.name}");
                 Console.WriteLine("------------------------------");
-                Console.WriteLine($"Using test sequence: {item.Name}");
+                Console.WriteLine($"Using test sequence: {item.name}");
                 predictor.Reset();
-                report.SequenceData = item.Data;
-                var accuracy = PredictNextElement(predictor, item.Data, report);
+                report.SequenceData = item.data;
+                var accuracy = PredictNextElement(predictor, item.data, report);
                 reports.Add(report);
-                Console.WriteLine($"Accuracy for {item.Name} sequence: {accuracy}%");
+                Console.WriteLine($"Accuracy for {item.name} sequence: {accuracy}%");
             }
 
             return reports;
